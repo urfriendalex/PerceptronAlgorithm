@@ -22,7 +22,7 @@ public class Flow {
 
         System.out.println("Finished reading training set! Training...");
 
-        int epoch = 0, error = 0, vectorsTrained = 0;
+        int epoch = 0, iterError = 0, vectorsTrained = 0;
         double ERROR_THRESHHOLD = 0.06;
         do {
             for (Vector v : trainingSet) {
@@ -30,11 +30,11 @@ public class Flow {
                 int actualOutput = perceptron.calculateActualOutput(v);
                 perceptron.trainVector(v, expectedOutput);
                 vectorsTrained++;
-                error += Math.abs(expectedOutput - actualOutput);
+                iterError += Math.abs(expectedOutput - actualOutput);
             }
             System.out.println(epoch++);
         }
-        while ((double) error / vectorsTrained > ERROR_THRESHHOLD);
+        while ((double) iterError / vectorsTrained > ERROR_THRESHHOLD);
         getPrecisionForClasses();
         System.out.println("Estimated model's accuracy: " + getAccuracy(testingSet));
     }
@@ -71,7 +71,6 @@ public class Flow {
             System.out.println("Precision for " + k + ": " + getAccuracy(testingSet));
         }
     }
-
 
     private Set<Vector> readDataSet(String path) {
         BufferedReader reader;

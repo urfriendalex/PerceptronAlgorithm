@@ -11,8 +11,8 @@ public class NumbersTest {
         System.out.println("Please enter the learning rate for the perceptron: ");
         double learningRate = Double.parseDouble(reader.readLine());
 
-        Flow flow = new Flow("/Users/tobeurdeath/Desktop/untitled/prog/NAI/NAI2/src/Numbers/test.txt",
-                "/Users/tobeurdeath/Desktop/untitled/prog/NAI/NAI2/src/Numbers/train.txt",
+        Flow flow = new Flow("/Users/tobeurdeath/Desktop/untitled/prog/NAI/NAI2/src/Numbers/train.txt",
+                "/Users/tobeurdeath/Desktop/untitled/prog/NAI/NAI2/src/Numbers/test.txt",
                 learningRate);
 
         System.out.println("=================\n" +

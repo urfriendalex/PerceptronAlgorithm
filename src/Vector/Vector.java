@@ -31,7 +31,7 @@ public class Vector {
         if (anotherVector.get_dimension() == get_dimension()) {
             Vector sumVector = new Vector(get_dimension());
             for (int i = 0; i < get_dimension(); i++) {
-                sumVector.get_values().set(i, (anotherVector.get_values().get(i) + get_values().get(i)));
+                sumVector.get_values().set(i, (anotherVector.get_values().get(i) + this.get_values().get(i)));
             }
             return sumVector;
         }
